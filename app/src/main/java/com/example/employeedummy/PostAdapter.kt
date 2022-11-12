@@ -16,16 +16,11 @@ class PostAdapter(private val postList: ArrayList<Post>) : RecyclerView.Adapter<
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         val post = postList[position]
-//        holder.id.text = "Id: " + postList[position].id.toString()
-//        holder.title.text = "Title: " + postList[position].title
-//        holder.body.text = "Body: " + postList[position].body
-
-        holder.id.text = postList[position].id.toString()
-        holder.title.text = postList[position].title
-        holder.body.text = postList[position].body
+        holder.id.text = post.id.toString()
+        holder.title.text = post.title
+        holder.body.text = post.body
 
         holder.itemView.setOnClickListener {
-
             onItemClick?.invoke(post)
         }
 
