@@ -34,21 +34,12 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("post", post)
             startActivity(intent)
         }
-        showPosts()
     }
-
-    private fun showPosts() {
-        lifecycleScope.launch(Dispatchers.IO) {
-            val result = api.getAllPosts().body()
-            Log.e("Check if retrofit works", result.toString())
-        }
-    }
-
     private fun setUpRecyclerView() = binding.rvEmployee.apply {
         postAdapter = PostAdapter()
         adapter = postAdapter
         layoutManager = LinearLayoutManager(this@MainActivity)
-        addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
+//        addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
     }
 
 }

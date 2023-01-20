@@ -24,9 +24,9 @@ class DetailActivity : AppCompatActivity() {
             val title: TextView = findViewById(R.id.tvDetailTitle)
             val body: TextView = findViewById(R.id.tvDetailBody)
 
-            id.text = "Id: " + post.id.toString()
-            title.text = "Title: " + post.title
-            body.text = "Body: " + post.body
+            id.text = post.id.toString()
+            title.text = post.title
+            body.text = post.body
         }
     }
 
